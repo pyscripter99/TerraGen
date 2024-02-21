@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cmpuoq0eu4bli"]
+
+[node name="TerraNode" type="PanelContainer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Titlebar" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Titlebar"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Titlebar/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Titlebar/MarginContainer/CenterContainer"]
+layout_mode = 2
+text = "Node"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Hello World, this is some text"
