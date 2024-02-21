@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://hk26tl8046dp"]
+
+[ext_resource type="Script" path="res://TestEdit.gd" id="1_gcd3q"]
+[ext_resource type="PackedScene" uid="uid://dqymr7cj26dun" path="res://Nodes/TerraNodeTest.tscn" id="2_t7xfg"]
+
+[node name="GraphEdit" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcd3q")
+
+[node name="TerraNodeTest" parent="." instance=ExtResource("2_t7xfg")]
+layout_mode = 0
+offset_right = 47.0
+offset_bottom = 95.0
+mouse_filter = 1
+
+[connection signal="connection_request" from="." to="." method="_on_connection_request"]
+[connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]
+[connection signal="disconnection_request" from="." to="." method="_on_disconnection_request"]
+[connection signal="node_deselected" from="." to="." method="_on_node_deselected"]
+[connection signal="node_selected" from="." to="." method="_on_node_selected"]
