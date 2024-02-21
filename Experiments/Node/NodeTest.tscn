@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxuqw8obqhen"]
+
+[ext_resource type="Texture2D" uid="uid://bd4mytr0m5c6v" path="res://Experiments/Node/grid.svg" id="1_0sk4o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbpwv"]
+texture = ExtResource("1_0sk4o")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjas3"]
+bg_color = Color(0.235294, 0.447059, 0.32549, 1)
+
+[node name="NodeTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_fbpwv")
+
+[node name="Panel" type="PanelContainer" parent="Container/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Panel/Panel"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Container/Panel/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vjas3")
+
+[node name="CenterContainer" type="CenterContainer" parent="Container/Panel/Panel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/Panel/Panel/VBoxContainer/PanelContainer/CenterContainer"]
+layout_mode = 2
+text = "Title"
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/Panel/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Panel/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/Panel/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is some body text"
+
+[node name="Button" type="Button" parent="Container/Panel/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Click ME"

@@ -13,9 +13,12 @@ script = ExtResource("1_gcd3q")
 
 [node name="TerraNodeTest" parent="." instance=ExtResource("2_t7xfg")]
 layout_mode = 0
-offset_right = 47.0
-offset_bottom = 95.0
+offset_left = 577.0
+offset_top = 358.0
+offset_right = 624.0
+offset_bottom = 453.0
 mouse_filter = 1
+position_offset = Vector2(577, 358)
 
 [connection signal="connection_request" from="." to="." method="_on_connection_request"]
 [connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]
